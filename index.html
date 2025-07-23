@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anchor Computers Receipt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Receipt Generator</h1>
+
+    <form id="receipt-form">
+      <input type="text" id="customer" placeholder="Customer Name" required />
+      <input type="text" id="address" placeholder="Customer Address" required />
+      <input type="text" id="phone" placeholder="Phone Number" required />
+
+      <input type="text" id="brand" placeholder="Laptop Brand" required />
+      <input type="text" id="model" placeholder="Model" required />
+      <input type="text" id="ram" placeholder="RAM (e.g. 8GB)" required />
+      <input type="text" id="storage" placeholder="Storage (e.g. 512GB SSD)" required />
+      <input type="text" id="processor" placeholder="Processor (e.g. Core i5)" required />
+      <input type="text" id="serial" placeholder="Serial Number (optional)" />
+      <input type="text" id="warranty" placeholder="Warranty (optional)" />
+      <input type="number" id="amount" placeholder="Amount (₦)" required />
+
+      <button type="submit">Generate Receipt</button>
+    </form>
+
+    <div id="receipt-area" class="receipt">
+      <div class="receipt-header">
+        <img src="logo.png" alt="Anchor Computers Logo" class="logo" />
+        <h2>Anchor Computers</h2>
+        <p>Receipt No: <span id="receipt-number"></span></p>
+      </div>
+
+      <div class="receipt-body">
+        <p><strong>Customer:</strong> <span id="r-customer"></span></p>
+        <p><strong>Address:</strong> <span id="r-address"></span></p>
+        <p><strong>Phone:</strong> <span id="r-phone"></span></p>
+        <hr/>
+        <p><strong>Brand:</strong> <span id="r-brand"></span></p>
+        <p><strong>Model:</strong> <span id="r-model"></span></p>
+        <p><strong>RAM:</strong> <span id="r-ram"></span></p>
+        <p><strong>Storage:</strong> <span id="r-storage"></span></p>
+        <p><strong>Processor:</strong> <span id="r-processor"></span></p>
+        <p id="serial-line"><strong>Serial Number:</strong> <span id="r-serial"></span></p>
+        <p id="warranty-line"><strong>Warranty:</strong> <span id="r-warranty"></span></p>
+        <hr/>
+        <p><strong>Amount:</strong> ₦<span id="r-amount"></span></p>
+        <p><strong>Date:</strong> <span id="r-date"></span></p>
+      </div>
+
+      <div class="receipt-footer">
+        <p>Powered by <strong style="color:#0077cc;">AurumTech</strong></p>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button onclick="printReceipt()">🖨 Print</button>
+      <button onclick="downloadAsImage()">⬇ Download as Image</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
